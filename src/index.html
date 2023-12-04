@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Угадай число</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+
+<body>
+    <h1>Игра «Угадай число»</h1>
+
+    <p class="description">Компьютер загадал случайное число. Сможешь угадать какое? Он сообщит
+        тебе, было ли загаданное число больше или меньше введенного. Сможет дать подсказку и напишет, сколько попыток
+        потребовалось тебе для угадывания. </p>
+
+    <div class="form">
+        <label class="form-title" for="guessField">Введи число сюда: </label>
+        <p class="selected-renge">Выбранный диапазон: </p>
+        <input type="number" required id="guessField" class="guessField">
+        <button type="submit" class="guess-button">Угадать</button>
+    </div>
+
+    <div class="resultBox">
+        <p class="guesses">Предыдущие значения: </p>
+        <p class="help"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+        <button class="reset-button">Начать новую игру</button>
+    </div>
+
+    <div class="modal-window-wrapper" id="modal">
+        <div class="background" id="background"></div>
+        <div class="modal-window">
+            <div class="modal-window-title">
+                <h3>Выбери диапазон чисел </h3>
+            </div>
+            <div class="range">
+                <label for="startNumber">с </label>
+                <input id="startNumber" value="0" type="text">
+                <label for="endNumber">по </label>
+                <input id="endNumber" value="100" type="text">
+            </div>
+            <button class="confirm">Выбрать</button>
+        </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+
+</html>

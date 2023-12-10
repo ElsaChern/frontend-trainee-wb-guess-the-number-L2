@@ -25,10 +25,12 @@ let guessCount = 1;
 let userGuess;
 let randomNumber;
 
+// Получаем загаданное число
 const getRandomNumber = () => {
   randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+// Функция проверки введенного числа с загаданным
 const checkGuess = () => {
   resultBox.style.display = "flex";
   userGuess = Number(guessField.value);
@@ -46,7 +48,7 @@ const checkGuess = () => {
   } else {
     lastResult.textContent = `Неверно! Попыток: ${guessCount}`;
     lastResult.style.backgroundColor = "rgba(235, 63, 63, 0.602)";
-
+    // Отображение подсказки при 3х неверных ответах
     if (guessCount === 3) {
       help.style.display = "block";
       help.textContent =
@@ -54,7 +56,7 @@ const checkGuess = () => {
           ? "Подсказка: загаданное число четное"
           : "Подсказка: загаданное число нечетное";
     }
-
+    // После каждой попытки компьютер сообщает, было ли загаданное число больше или меньше предложенного
     if (userGuess < randomNumber && userGuess >= min) {
       lowOrHi.classList.remove("warning");
       lowOrHi.textContent = "Совет: попробуй число побольше";
@@ -62,6 +64,7 @@ const checkGuess = () => {
       lowOrHi.classList.remove("warning");
       lowOrHi.textContent = "Совет: попробуй число поменьше";
     } else {
+      // Обработка числа за пределами диапазона
       lowOrHi.textContent = "Упс, кажется число не входит в диапазон";
       lowOrHi.classList.add("warning");
     }
@@ -72,6 +75,7 @@ const checkGuess = () => {
   guessField.focus();
 };
 
+// Завершение игры
 const gameOver = () => {
   guessField.disabled = true;
   guessBtn.disabled = true;
@@ -79,6 +83,7 @@ const gameOver = () => {
   resetGameBtn.addEventListener("click", resetGame);
 };
 
+// Очистка значений и запуск новой игры
 const resetGame = () => {
   guessCount = 1;
   resultBox.style.display = "none";
@@ -92,6 +97,7 @@ const resetGame = () => {
   getRandomNumber();
 };
 
+// Отображение модального окна
 const initialize = () => {
   modal.classList.add("shown");
 };

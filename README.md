@@ -32,3 +32,8 @@
 
 Для проверки задания, необходимо открыть файл расширения .html в браузере или
 воспользоваться расширением VSCode "Live Server"
+
+### Демо
+
+Демонстрацию работы проекта можно посмотреть
+[по ссылке](https://elsachern.github.io/frontend-trainee-wb-guess-the-number-L2/src/index.html)
